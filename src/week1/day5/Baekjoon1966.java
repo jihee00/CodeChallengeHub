@@ -10,6 +10,7 @@ public class Baekjoon1966 {
         int index;
         int priority;
 
+        // Class to represent each document with its index and priority
         public Document(int index, int priority) {
             this.index = index;
             this.priority = priority;
@@ -25,7 +26,7 @@ public class Baekjoon1966 {
             int M = sc.nextInt(); //Position of the document of interest
 
             Queue<Document> queue = new LinkedList<>();
-            int[] priorities = new int[10];
+            int[] priorities = new int[10];  // Array to count the number of documents for each priority (1-9)
 
             for (int j = 0; j < N; j++) {
                 int priority = sc.nextInt();
@@ -33,7 +34,7 @@ public class Baekjoon1966 {
                 priorities[priority]++;
             }
 
-            int printOrder = 0;
+            int printOrder = 0; // To keep track of the print order
 
             while (!queue.isEmpty()) {
                 Document current = queue.poll();
