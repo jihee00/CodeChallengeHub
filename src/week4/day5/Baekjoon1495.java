@@ -3,6 +3,7 @@ package week4.day5;
 import java.util.Scanner;
 
 public class Baekjoon1495 {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt(); // Number of songs
