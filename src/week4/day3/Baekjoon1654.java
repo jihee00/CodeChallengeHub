@@ -6,10 +6,12 @@ public class Baekjoon1654 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // K: Number of available cables, N: Number of cables to be made
         int K = sc.nextInt();
         int N = sc.nextInt();
+        // Array to store the length of each cable
         int[] cables = new int[K];
-
+        // Variable to store the maximum length of the cables
         long max = 0;
         for (int i = 0; i < K; i++) {
             cables[i] = sc.nextInt();
@@ -18,13 +20,15 @@ public class Baekjoon1654 {
             }
         }
 
-        long left = 1;
-        long right = max;
-        long result = 0;
+        // Initializing the binary search boundaries
+        long left = 1; // Minimum possible length
+        long right = max; // Maximum possible length
+        long result = 0; // Variable to store the final answer
 
+        // Binary search to find the maximum length of cable that can produce at least N cables
         while (left <= right) {
-            long mid = (left + right) / 2;
-            long totalCable = 0;
+            long mid = (left + right) / 2; // Midpoint of current search space
+            long totalCable = 0; // Total number of cables that can be made with 'mid' length
 
             // Calculate how many cables can be made with the current mid length
             for (int cable : cables) {
